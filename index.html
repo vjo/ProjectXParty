@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="utf-8" />
+
+    <title>Project X Beach Party</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="css/jquery.fancybox.css" type="text/css" media="screen" />
+  
+  </head>
+
+  <body>
+    <div class="container">
+
+      <div class="header">
+          <h1 class="title">Project X [Beach] Party</h1>
+
+          <div class="date">
+              <span class="day-of-week">Samedi</span> 
+              <span class="day">09 Juin</span> 
+              <span class="year">deux mille douze</span> 
+              <span class="time">Début 20h30</span>
+          </div>
+
+          <div class="location">
+              <div id="map"></div>
+              <!--<span class="street">la rue</span>
+              <span class="city">la Ville</span>
+              -->
+          </div>
+
+
+      </div><!-- end header -->
+      
+      <div id="play"></div>
+
+      <div id="counter">Bientôt !</div>
+
+    </div><!-- end container -->
+
+  	<script type="text/javascript" src="js/countdown.js"></script>
+  	<script type="text/javascript" src="js/app.js"></script>
+
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+
+    <script type="text/javascript" src="https://maps.google.com/maps?file=api&amp;v=2&amp;key=AIzaSyBiKbQoU2HDjjw3f6jLqbWTZgxlryD0UE4"></script>
+    <script type="text/javascript" src="js/jquery.gmap-1.1.0-min.js"></script>
+    <script>
+      $(function() {
+        $("#map").gMap({
+                            latitude:               48.890455,
+                            longitude:              2.515869,
+                            zoom:                   9,
+                            markers:                [{latitude: 48.958848, longitude: 2.973164, html: "Beach Party"}],
+                            controls:               ["GSmallZoomControl"],
+                            scrollwheel:            false,
+                            maptype:                G_NORMAL_MAP,
+                        });
+      });
+    </script>
+
+    <script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
+    <script>
+      $(document).ready(function() {
+        $("div#play").fancybox({
+          'padding'       : 0,
+          'autoScale'     : false,
+          'transitionIn'  : 'none',
+          'transitionOut' : 'none',
+          'title'         : 0,
+          'autoplay'      : 1,
+          'width'         : 960,
+          'height'        : 540,
+          'href'          : 'http://vimeo.com/moogaloop.swf?clip_id=42394125',
+          'type'          : 'swf'
+        });
+      });
+    </script>
+
+  	<footer>
+  		<a href="https://www.facebook.com/events/287654711321473/"><img src="img/Facebook.png" alt="Facebook Event"></a> <a href="maito:contact@projectxparty.fr"><img src="img/Mail.png" alt="Contact"></a>
+  	</footer>
+  </body>
+</html>
